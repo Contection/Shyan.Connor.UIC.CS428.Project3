@@ -13,9 +13,15 @@ public class GenerateSodaCan : MonoBehaviour
 
     }
 
-    public void AddObject()
+    IEnumerator DelaySeconds(float seconds)
     {
+        yield return new WaitForSeconds(seconds);
         GameObject newSodaCan = Instantiate(sodaCan, parent, false);
         newSodaCan.SetActive(true);
+    }
+
+    public void AddObject()
+    {
+        StartCoroutine(DelaySeconds(2.5f));
     }
 }
