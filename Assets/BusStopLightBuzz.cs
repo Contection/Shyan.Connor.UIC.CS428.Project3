@@ -14,7 +14,6 @@ public class BusStopLightBuzz : MonoBehaviour
     {
         light = GetComponent<Light>();
         buzz = GetComponent<AudioSource>();
-        sparks = GetComponent<ParticleSystem>();
         StartCoroutine(lightBuzz());
     }
 
@@ -27,19 +26,19 @@ public class BusStopLightBuzz : MonoBehaviour
             sparks.Play();
             yield return new WaitForSeconds(Random.Range(minSpeed, maxSpeed));
             light.enabled = true;
-            sparks.Play();
+            // sparks.Play();
             yield return new WaitForSeconds(Random.Range(minSpeed, maxSpeed));
             light.enabled = false;
-            sparks.Play();
+            // sparks.Play();
             yield return new WaitForSeconds(Random.Range(minSpeed, maxSpeed));
             light.enabled = true;
-            sparks.Play();
+            // sparks.Play();
             yield return new WaitForSeconds(Random.Range(minSpeed, maxSpeed));
             light.enabled = false;
-            sparks.Play();
+            // sparks.Play();
             yield return new WaitForSeconds(Random.Range(minSpeed, maxSpeed));
             light.enabled = true;
-            sparks.Play();
+            sparks.Stop();
         }
     }
 }
